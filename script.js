@@ -18,7 +18,7 @@ async function  tableWeather() {
     const response=await fetch(apiUrl1 + `&appid=${apiKey1}`)
     var data= await response.json();
 
-    console.log(data)
+    // console.log(data)
 
     document.querySelector(".city1").innerHTML=data.name.toUpperCase()
     document.querySelector(".tb-data").innerHTML=Math.round(data.main.temp)+ "°c";
@@ -34,7 +34,7 @@ async function  tableWeather1() {
     const response=await fetch(apiUrl2 + `&appid=${apiKey2}`)
     var data= await response.json();
 
-    console.log(data)
+    // console.log(data)
 
     document.querySelector(".city2").innerHTML=data.name.toUpperCase()
     document.querySelector(".tb-data1").innerHTML=Math.round(data.main.temp)+ "°c";
@@ -50,7 +50,7 @@ async function  tableWeather2() {
     const response=await fetch(apiUrl3 + `&appid=${apiKey3}`)
     var data= await response.json();
 
-    console.log(data)
+    // console.log(data)
 
     document.querySelector(".city3").innerHTML=data.name.toUpperCase()
     document.querySelector(".tb-data2").innerHTML=Math.round(data.main.temp)+ "°c";
@@ -65,7 +65,12 @@ tableWeather2()
 
 async function checkWeather(city){
     const response = await fetch(apiUrl + city +`&appid=${apiKey}`)
-    var data= await response.json();
+
+    if (response.status == 404) {
+        document.querySelector(".error").style.display="block";
+        document.querySelector(".weather-container").style.display="none";
+    } else {
+        var data= await response.json();
     console.log(data)
 
     document.querySelector(".city").innerHTML=data.name;
@@ -77,7 +82,7 @@ async function checkWeather(city){
     if(data.weather[0].main == "Clear"){
         weatherIcon.src="./images/clear.png"
     }
-    else if(data.weather[0].main == "CLodus"){
+    else if(data.weather[0].main == "Clouds"){
         weatherIcon.src="./images/clouds.png"
     }
     else if(data.weather[0].main == "Drizzle"){
@@ -91,7 +96,12 @@ async function checkWeather(city){
     }
     else if(data.weather[0].main == "Snow"){
         weatherIcon.src="./images/snow.png"
+    }    
+    document.querySelector(".error").style.display="none";
+        document.querySelector(".weather-container").style.display="block";
     }
+
+    
 }
 
 searchButton.addEventListener("click",()=>{
