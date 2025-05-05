@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Weather App</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"
+    />
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="container">
+        <header>
+          <div class="logo"><h1>Climates</h1></div>
+          <input type="checkbox" id="chk1" />
+          <div class="search-box">
+            <input
+              type="text"
+              name="search"
+              id="search"
+              placeholder="Enter City Name"
+            />
+            <button class="btn" type="submit">Search</button>
+          </div>
+          <ul>
+            <li class="head"><h1>CLIMATES</h1></li>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Help</a></li>
+          </ul>
+          <div class="menu">
+            <label for="chk1">
+              <i class="bx bx-menu"></i>
+            </label>
+          </div>
+        </header>
+      </div>
+      <div class="weather-container">
+        <div class="weather-icon">
+          <img src="./images/clouds.png" class="icon" />
+        </div>
+        <div class="weathers">
+          <div>
+            <h2 class="city">Ambur</h2>
+          </div>
+          <div class="weather-box">
+            <div>
+              <h1 id="temp" class="temp">22°c</h1>
+              <h6>Temperature</h6>
+            </div>
+            <div>
+              <h1 id="feel" class="feel">22</h1>
+              <h6>Feel Like</h6>
+            </div>
+          </div>
+
+          <div class="weather-box">
+            <div>
+              <!-- <img src="./images/wind.png"> -->
+              <h1 id="wind" class="wind">4 km/hr</h1>
+              <h6>Wind Speed</h6>
+            </div>
+            <div>
+              <!-- <img src="./images/weather.png"> -->
+              <h1 id="humidity" class="humidity">50%</h1>
+              <h6>Humidity</h6>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="weather-table">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">CITY</th>
+              <th scope="col">Temperature</th>
+              <th scope="col">Humidity</th>
+              <th scope="col">Wind Speed</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row" class="city1">New York</th>
+              <td class="tb-data">Mark</td>
+              <td class="tb-humidity">Otto</td>
+              <td class="tb-wind">@mdo</td>
+            </tr>
+            <tr>
+              <th scope="row" class="city2">Hong Kong</th>
+              <td class="tb-data1">Jacob</td>
+              <td class="tb-humidity1">Thornton</td>
+              <td class="tb-wind1">@fat</td>
+            </tr>
+            <tr>
+              <th scope="row" class="city3">Seoul</th>
+              <td class="tb-data2">John</td>
+              <td class="tb-humidity2">Doe</td>
+              <td class="tb-wind2">@social</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+  <script src="script.js"></script>
+</html>
